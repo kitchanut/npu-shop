@@ -1,0 +1,386 @@
+<!doctype html>
+<html lang="th">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Luxora – Furniture Shop</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              display: ["Poppins", "ui-sans-serif", "system-ui", "sans-serif"],
+              body: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+            },
+            colors: {
+              base: {
+                DEFAULT: "#111827",
+                50: "#F9FAFB",
+                100: "#F3F4F6",
+                200: "#E5E7EB",
+                300: "#D1D5DB",
+              },
+              brand: {
+                50: "#F6F7FB",
+                100: "#EEF1F7",
+                200: "#E4E8F3",
+                600: "#111111",
+              },
+            },
+            boxShadow: {
+              subtle: "0 6px 24px rgba(0,0,0,0.06)",
+            },
+          },
+          container: { center: true, padding: "1rem" },
+        },
+      };
+    </script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet" />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+      /* smooth scroll for anchor links */
+      html { scroll-behavior: smooth; }
+    </style>
+  </head>
+  <body class="bg-base-100 text-base font-body">
+    <!-- Page wrapper to simulate the card-in-gray look -->
+    <div class="min-h-screen bg-brand-100/60">
+      <main class="container max-w-screen-2xl py-6">
+        <div class="bg-white rounded-2xl shadow-subtle overflow-hidden">
+          <!-- Header -->
+          <header class="relative z-10">
+            <div class="flex items-center justify-between px-6 lg:px-10 py-5 border-b border-base-200/60">
+              <a href="#" class="font-display text-xl tracking-wide">LUXORA</a>
+              <nav class="hidden md:flex items-center gap-7 text-sm text-gray-700">
+                <a class="hover:text-black" href="#home">Home</a>
+                <a class="hover:text-black" href="#features">Product</a>
+                <a class="hover:text-black" href="#why">Features</a>
+                <a class="hover:text-black" href="#reviews">Reviews</a>
+                <a class="hover:text-black" href="#about">About us</a>
+              </nav>
+              <div class="flex items-center gap-3">
+                <button class="p-2 rounded-full hover:bg-base-100" aria-label="Search"><i data-lucide="search" class="w-5 h-5"></i></button>
+                <button class="p-2 rounded-full hover:bg-base-100" aria-label="Account"><i data-lucide="user" class="w-5 h-5"></i></button>
+                <button class="relative p-2 rounded-full hover:bg-base-100" aria-label="Cart">
+                  <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+                  <span class="absolute -top-1 -right-1 inline-flex h-4 min-w-[16px] items-center justify-center rounded-full bg-black text-white text-[10px] px-1">2</span>
+                </button>
+                <button class="md:hidden p-2 rounded hover:bg-base-100" aria-label="Menu"><i data-lucide="menu" class="w-5 h-5"></i></button>
+              </div>
+            </div>
+          </header>
+
+          <!-- Hero -->
+          <section id="home" class="relative">
+            <div class="grid lg:grid-cols-12 gap-8 items-center px-6 lg:px-10 pt-10 pb-8">
+              <div class="lg:col-span-7">
+                <p class="text-sm tracking-wider uppercase text-gray-500">Elevate Your Space with</p>
+                <h1 class="font-display text-5xl md:text-6xl xl:text-7xl tracking-tight leading-[1.05] mt-2">Luxury & Comfort</h1>
+                <p class="mt-5 text-gray-600 max-w-xl">เฟอร์นิเจอร์สไตล์โมเดิร์นที่ออกแบบอย่างประณีต เพื่อความสบายและสุนทรียะในทุกมุมบ้านของคุณ</p>
+                <div class="mt-8 flex flex-wrap items-center gap-3">
+                  <a href="#features" class="inline-flex items-center gap-2 rounded-full border border-gray-900 px-5 py-2.5 text-sm font-medium hover:bg-gray-900 hover:text-white transition">
+                    Browse Collection <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                  </a>
+                  <a href="#shop" class="inline-flex items-center gap-2 text-sm text-gray-600 hover:text-black">
+                    Best Deals <i data-lucide="sparkles" class="w-4 h-4"></i>
+                  </a>
+                </div>
+                <!-- Dots -->
+                <div class="mt-10 flex items-center gap-2">
+                  <span class="h-1.5 w-8 rounded-full bg-black"></span>
+                  <span class="h-1.5 w-3 rounded-full bg-gray-300"></span>
+                  <span class="h-1.5 w-3 rounded-full bg-gray-300"></span>
+                </div>
+              </div>
+              <div class="lg:col-span-5 flex items-center justify-center">
+                <div class="relative w-full max-w-md">
+                  <div class="absolute -left-24 -top-20 w-72 h-72 rounded-full bg-brand-100 blur-3xl opacity-70 hidden md:block"></div>
+                  <img src="image/778281.jpg" alt="Hero chair" class="relative z-10 w-full object-contain" />
+                </div>
+              </div>
+            </div>
+
+            <!-- Trusted brands row -->
+            <div class="px-6 lg:px-10 pb-6">
+              <div class="grid grid-cols-2 md:grid-cols-5 gap-6 items-center text-gray-400 text-sm">
+                <span class="justify-self-center">MeUndies</span>
+                <span class="justify-self-center">slack</span>
+                <span class="justify-self-center">amazon</span>
+                <span class="justify-self-center">woocommerce</span>
+                <span class="justify-self-center">sitepoint</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why our deals are best -->
+          <section id="features" class="px-6 lg:px-10 py-12">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="font-display text-3xl md:text-4xl">Why Our Deals Are Best</h2>
+              <p class="mt-3 text-gray-600">วัสดุคุณภาพ ราคาคุ้มค่า และงานดีไซน์เหนือระดับ เพื่อพื้นที่ที่เป็นตัวคุณ</p>
+            </div>
+            <div class="mt-10 grid md:grid-cols-3 gap-6">
+              <!-- card 1 -->
+              <div class="rounded-xl border border-base-200 p-5 shadow-subtle/20">
+                <div class="h-10 w-10 rounded-lg bg-black text-white flex items-center justify-center"><i data-lucide="chair" class="w-5 h-5"></i></div>
+                <h3 class="mt-4 font-semibold">Comfortable Seating</h3>
+                <p class="text-sm text-gray-600 mt-2">เบาะนุ่ม รองรับสรีระ ระบายอากาศดี เหมาะกับทุกการใช้งาน</p>
+              </div>
+              <!-- card 2 -->
+              <div class="rounded-xl border border-base-200 p-5 shadow-subtle/20">
+                <div class="h-10 w-10 rounded-lg bg-black text-white flex items-center justify-center"><i data-lucide="badge-check" class="w-5 h-5"></i></div>
+                <h3 class="mt-4 font-semibold">Quality Craftsmanship</h3>
+                <p class="text-sm text-gray-600 mt-2">คัดสรรวัสดุพรีเมียม และประกอบอย่างประณีตเพื่อความทนทาน</p>
+              </div>
+              <!-- card 3 -->
+              <div class="rounded-xl border border-base-200 p-5 shadow-subtle/20">
+                <div class="h-10 w-10 rounded-lg bg-black text-white flex items-center justify-center"><i data-lucide="wand-2" class="w-5 h-5"></i></div>
+                <h3 class="mt-4 font-semibold">Stylish Designs</h3>
+                <p class="text-sm text-gray-600 mt-2">ดีไซน์ร่วมสมัย เรียบหรู เข้าได้กับทุกสไตล์การตกแต่ง</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Why choose us + imagery sections -->
+          <section id="why" class="px-6 lg:px-10 py-10">
+            <h2 class="font-display text-3xl">Why Choose Us</h2>
+            <div class="mt-8 grid lg:grid-cols-2 gap-10 items-center">
+              <div>
+                <p class="text-gray-600">เราเชื่อว่าทุกพื้นที่ในบ้านบอกเล่าเรื่องราวของคุณได้ เฟอร์นิเจอร์ของเราจึงถูกออกแบบให้ใช้งานได้จริง และคงทนยาวนาน</p>
+                <ul class="mt-6 space-y-3 text-sm">
+                  <li class="flex items-start gap-3"><i data-lucide="check-circle" class="mt-0.5 w-5 h-5 text-green-600"></i><span>รับประกันคุณภาพสินค้า 1 ปีเต็ม</span></li>
+                  <li class="flex items-start gap-3"><i data-lucide="truck" class="mt-0.5 w-5 h-5 text-blue-600"></i><span>จัดส่งรวดเร็วและติดตั้งถึงบ้าน</span></li>
+                  <li class="flex items-start gap-3"><i data-lucide="recycle" class="mt-0.5 w-5 h-5 text-amber-600"></i><span>วัสดุเป็นมิตรต่อสิ่งแวดล้อม</span></li>
+                </ul>
+              </div>
+              <div class="relative rounded-2xl overflow-hidden bg-brand-50">
+                <img src="image/778271_0.jpg" alt="Red Chair" class="w-full object-cover" />
+              </div>
+            </div>
+
+            <div class="mt-16 grid lg:grid-cols-2 gap-10 items-center">
+              <div class="order-2 lg:order-1 relative rounded-2xl overflow-hidden">
+                <img src="image/778278_0.jpg" alt="Gray Chair" class="w-full object-cover" />
+              </div>
+              <div class="order-1 lg:order-2">
+                <h3 class="font-display text-3xl">Quality Craftsmanship</h3>
+                <p class="mt-4 text-gray-600">งานไม้ผ่านการขัดเคลือบอย่างดี ให้สัมผัสสวยงาม แข็งแรง และทนต่อรอยขีดข่วน</p>
+                <div class="mt-6 grid sm:grid-cols-3 gap-4 text-sm">
+                  <div class="rounded-lg border p-4"><span class="block text-gray-500">Material</span><span class="font-medium">Oak / Fabric</span></div>
+                  <div class="rounded-lg border p-4"><span class="block text-gray-500">Warranty</span><span class="font-medium">12 Months</span></div>
+                  <div class="rounded-lg border p-4"><span class="block text-gray-500">Shipping</span><span class="font-medium">Free</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Featured products -->
+          <section class="px-6 lg:px-10 py-12" aria-labelledby="featured-title">
+            <div class="flex items-end justify-between gap-6">
+              <div>
+                <h2 id="featured-title" class="font-display text-3xl">Our Featured Products</h2>
+                <p class="mt-2 text-gray-600 max-w-2xl">ค้นพบงานดีไซน์เด่นที่เราคัดเลือกมาแล้วว่าเหมาะกับทุกสไตล์บ้าน</p>
+              </div>
+              <div class="hidden md:flex gap-2">
+                <button class="h-10 w-10 rounded-full border flex items-center justify-center hover:bg-base-100" aria-label="Prev"><i data-lucide="chevron-left" class="w-5 h-5"></i></button>
+                <button class="h-10 w-10 rounded-full border flex items-center justify-center hover:bg-base-100" aria-label="Next"><i data-lucide="chevron-right" class="w-5 h-5"></i></button>
+              </div>
+            </div>
+
+            <div class="mt-8 grid md:grid-cols-3 gap-6">
+              <!-- product card -->
+              <article class="group rounded-2xl border border-base-200 overflow-hidden">
+                <div class="relative aspect-[4/3] bg-brand-50">
+                  <img src="image/778272_0.jpg" alt="Chair 1" class="w-full h-full object-contain p-6 group-hover:scale-[1.02] transition" />
+                  <button class="absolute top-3 right-3 h-9 w-9 rounded-full bg-white/90 backdrop-blur border flex items-center justify-center" aria-label="Wishlist"><i data-lucide="heart" class="w-4 h-4"></i></button>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-medium">Cherner Children's Chair</h3>
+                  <p class="text-xs text-gray-500">Manufacturer: Herman Miller</p>
+                  <div class="mt-3 flex items-center justify-between">
+                    <span class="font-semibold">$385.00</span>
+                    <div class="flex items-center gap-1 text-yellow-500">
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+                    </div>
+                  </div>
+                  <button class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-black text-white px-4 py-2 text-sm hover:opacity-90">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to cart
+                  </button>
+                </div>
+              </article>
+
+              <article class="group rounded-2xl border border-base-200 overflow-hidden">
+                <div class="relative aspect-[4/3] bg-brand-50">
+                  <img src="image/778273_0.jpg" alt="Lamp" class="w-full h-full object-contain p-6 group-hover:scale-[1.02] transition" />
+                  <span class="absolute left-3 top-3 inline-flex items-center gap-1 rounded-full bg-amber-100 text-amber-900 px-2.5 py-1 text-xs"><i data-lucide="flame" class="w-3.5 h-3.5"></i> Hot</span>
+                </div>
+                <div class="p-5">
+                  <h3 class="font-medium">Barcode I Lantern</h3>
+                  <p class="text-xs text-gray-500">Maverick Vassallo</p>
+                  <div class="mt-3 flex items-center justify-between">
+                    <span class="font-semibold">$445.00</span>
+                    <div class="flex items-center gap-1 text-yellow-500">
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+                      <i data-lucide="star" class="w-4 h-4 text-gray-300"></i>
+                    </div>
+                  </div>
+                  <button class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-black text-white px-4 py-2 text-sm hover:opacity-90">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to cart
+                  </button>
+                </div>
+              </article>
+
+              <article class="group rounded-2xl border border-base-200 overflow-hidden">
+                <div class="relative aspect-[4/3] bg-brand-50">
+                  <img src="image/778274_0.jpg" alt="Windsor armchair" class="w-full h-full object-contain p-6 group-hover:scale-[1.02] transition" />
+                </div>
+                <div class="p-5">
+                  <h3 class="font-medium">Riki Windsor Armchair</h3>
+                  <p class="text-xs text-gray-500">Oak wood / Natural</p>
+                  <div class="mt-3 flex items-center justify-between">
+                    <span class="font-semibold">$500.00</span>
+                    <div class="flex items-center gap-1 text-yellow-500">
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                      <i data-lucide="star" class="w-4 h-4"></i>
+                    </div>
+                  </div>
+                  <button class="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-lg bg-black text-white px-4 py-2 text-sm hover:opacity-90">
+                    <i data-lucide="shopping-bag" class="w-4 h-4"></i> Add to cart
+                  </button>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Shop categories -->
+          <section id="shop" class="px-6 lg:px-10 py-12 border-t">
+            <div class="text-center">
+              <h2 class="font-display text-3xl">Shop Our Products</h2>
+              <p class="mt-2 text-gray-600">เลือกตามหมวดหมู่ที่คุณชอบ</p>
+            </div>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm">
+              <button class="px-4 py-2 rounded-full bg-black text-white">Popular</button>
+              <button class="px-4 py-2 rounded-full border hover:bg-base-100">Chairs</button>
+              <button class="px-4 py-2 rounded-full border hover:bg-base-100">Sofas</button>
+              <button class="px-4 py-2 rounded-full border hover:bg-base-100">Beds</button>
+              <button class="px-4 py-2 rounded-full border hover:bg-base-100">Kitchen</button>
+              <button class="px-4 py-2 rounded-full border hover:bg-base-100">Living Room</button>
+              <button class="px-4 py-2 rounded-full border hover:bg-base-100">See All</button>
+            </div>
+
+            <!-- Horizontal scroll products -->
+            <div class="mt-8 relative">
+              <div class="flex gap-6 overflow-x-auto snap-x snap-mandatory pb-2" id="scrollRow">
+                <!-- item repeat -->
+                <div class="min-w-[240px] snap-start rounded-2xl border overflow-hidden">
+                  <div class="aspect-[4/3] bg-brand-50 flex items-center justify-center p-6"><img src="image/778275_0.jpg" alt="p1" class="h-full object-contain"></div>
+                  <div class="p-4">
+                    <div class="font-medium">Ottoman | Stool</div>
+                    <div class="text-sm text-gray-600 mt-1">$95.00</div>
+                  </div>
+                </div>
+                <div class="min-w-[240px] snap-start rounded-2xl border overflow-hidden">
+                  <div class="aspect-[4/3] bg-brand-50 flex items-center justify-center p-6"><img src="image/778276_0.jpg" alt="p2" class="h-full object-contain"></div>
+                  <div class="p-4">
+                    <div class="font-medium">Kitchen | Stool</div>
+                    <div class="text-sm text-gray-600 mt-1">$120.00</div>
+                  </div>
+                </div>
+                <div class="min-w-[240px] snap-start rounded-2xl border overflow-hidden">
+                  <div class="aspect-[4/3] bg-brand-50 flex items-center justify-center p-6"><img src="image/778277_0.jpg" alt="p3" class="h-full object-contain"></div>
+                  <div class="p-4">
+                    <div class="font-medium">Padded Chair</div>
+                    <div class="text-sm text-gray-600 mt-1">$175.00</div>
+                  </div>
+                </div>
+                <div class="min-w-[240px] snap-start rounded-2xl border overflow-hidden">
+                  <div class="aspect-[4/3] bg-brand-50 flex items-center justify-center p-6"><img src="image/778279_0.jpg" alt="p4" class="h-full object-contain"></div>
+                  <div class="p-4">
+                    <div class="font-medium">Classic Chair</div>
+                    <div class="text-sm text-gray-600 mt-1">$139.00</div>
+                  </div>
+                </div>
+                <div class="min-w-[240px] snap-start rounded-2xl border overflow-hidden">
+                  <div class="aspect-[4/3] bg-brand-50 flex items-center justify-center p-6"><img src="image/778280_0.jpg" alt="p5" class="h-full object-contain"></div>
+                  <div class="p-4">
+                    <div class="font-medium">Wooden Chair</div>
+                    <div class="text-sm text-gray-600 mt-1">$159.00</div>
+                  </div>
+                </div>
+              </div>
+              <!-- simple dots -->
+              <div class="mt-6 flex items-center justify-center gap-2">
+                <span class="h-1.5 w-8 rounded-full bg-black"></span>
+                <span class="h-1.5 w-3 rounded-full bg-gray-300"></span>
+                <span class="h-1.5 w-3 rounded-full bg-gray-300"></span>
+                <span class="h-1.5 w-3 rounded-full bg-gray-300"></span>
+              </div>
+            </div>
+          </section>
+
+          <!-- Newsletter -->
+          <section class="px-6 lg:px-10 py-12">
+            <div class="rounded-2xl border p-6 md:p-10 flex flex-col md:flex-row items-center gap-6">
+              <div class="flex-1 flex items-center gap-4">
+                <img src="image/778271_0.jpg" class="w-24 h-24 object-cover rounded-xl hidden md:block" alt="mini chair" />
+                <div>
+                  <h3 class="font-display text-2xl">Get in touch</h3>
+                  <p class="text-sm text-gray-600">สมัครรับอีเมลเพื่อรับส่วนลด 25% ครั้งแรก</p>
+                </div>
+              </div>
+              <form class="flex-1 w-full flex gap-3">
+                <div class="flex-1">
+                  <label class="sr-only" for="email">Email</label>
+                  <input id="email" type="email" placeholder="Enter your email address" class="w-full rounded-lg border px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-black" />
+                </div>
+                <button type="button" class="inline-flex items-center gap-2 rounded-lg bg-black text-white px-5 py-3 text-sm">
+                  Subscribe <i data-lucide="send" class="w-4 h-4"></i>
+                </button>
+              </form>
+            </div>
+          </section>
+
+          <!-- Footer -->
+          <footer id="about" class="px-6 lg:px-10 pt-10 pb-8 border-t">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+              <div class="font-display text-lg tracking-wide">LUXORA</div>
+              <nav class="text-sm text-gray-600 flex flex-wrap gap-x-6 gap-y-3">
+                <a href="#features" class="hover:text-black">Product</a>
+                <a href="#why" class="hover:text-black">Features</a>
+                <a href="#reviews" class="hover:text-black">Reviews</a>
+                <a href="#about" class="hover:text-black">About us</a>
+              </nav>
+              <div class="flex items-center gap-3">
+                <a href="#" class="p-2 hover:bg-base-100 rounded" aria-label="Facebook"><i data-lucide="facebook" class="w-4 h-4"></i></a>
+                <a href="#" class="p-2 hover:bg-base-100 rounded" aria-label="Instagram"><i data-lucide="instagram" class="w-4 h-4"></i></a>
+                <a href="#" class="p-2 hover:bg-base-100 rounded" aria-label="Twitter"><i data-lucide="twitter" class="w-4 h-4"></i></a>
+              </div>
+            </div>
+            <p class="mt-8 text-center text-xs text-gray-500">© 2025 Luxora. All rights reserved.</p>
+          </footer>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Render Lucide icons
+      lucide.createIcons();
+    </script>
+  </body>
+  </html>
+
